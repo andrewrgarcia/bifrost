@@ -6,222 +6,222 @@ Usage
 Installation
 ------------
 
-It is recommended you use voxelmap through a virtual environment. You may follow the below simple protocol to create the virtual environment, run it, and install the package there:
+Due to the early stage of development of the project, we recommend that you clone the repository [using SSH] and manually review the scripts using a text editor.
+This will allow you to have greater control over the code and ensure that you understand any changes or modifications that are made to the project.
 
+ 
 .. code-block:: console
    
-   $ virtualenv venv
-   $ source venv/bin/activate
-   (.venv) $ pip install tensorscout
+   $ # Clone the repository and change dir (cd) to cloned repo
+   $ git clone git@github.com:username/bifrost.git
+   $ cd bifrost
+   $ # Open the repository in your preferred text editor 
+   $ code .   #if using Visual Studio Code
 
-To exit the virtual environment, simply type ``deactivate``. To access it at any other time again, enter with the above ``source`` command.
+If you're unfamiliar with terminal commands, here are more graphical-friendly instructions.
 
+To clone the Bifrost repository, first navigate to the GitHub repository website using your web browser. 
+Once you're in the repository, look for a green button labeled "Clone" on the right-hand side of the page. Click on this button to reveal a dropdown menu.
 
-Monte Carlo sampling with multiple processors
-------------------------------------------------
-
-
-When performing Monte Carlo sampling at a high number, it can significantly impact computing power. 
-To address this, we have developed the ``@multicarlo`` decorator, which allocates a specific number of iterations to
-a defined number of available processors or cores. In our case, since we have a computer with 4 cores, we have set
-the num_cores to 4. However, you can set it to as many cores as your computer or server may have available. 
-
-In this example, we compare the runtime performance of this multiprocessing decorator with the bare approach, 
-which uses a single core. We begin by importing all the required modules and defining a function that is used
-in both approaches to avoid redundancy.
-
-
-.. code-block:: python
-
-   import tensorscout as scout
-   import numpy as np
-   import matplotlib.pyplot as plt
-   from timethis import timethis
-
-   def make_histograms(results, title):
-      plt.figure()
-      plt.title(title+'(N = 100,000)')
-      plt.hist(data,alpha=0.5,label='data')
-      plt.hist(results,alpha=0.5,label=title)
-      plt.legend()
-
-The operations we run on both methodologies are random sampling operations which take random numbers from a distribution.
-For both methods, we set the number of samples to 100,000, which is a considerable amount. 
-In the following code block, we apply the ``@multicarlo`` decorator to our random sampling function ``monte_carlo_function``
-and distribute the sampling iterations across four cores. 
-
-The ``timethis()`` function is used to record the run times of both methods and print them as a terminal output.
-
-.. code-block:: python
-
-
-   title = 'data resampling (with @multicarlo -- 4 cores)'
-   with timethis(title):
-
-      @scout.multicarlo(num_iters=100000, num_cores=4)
-      def monte_carlo_function(data, *args, **kwargs):
-         simulated_data = np.random.normal(np.mean(data), np.std(data))
-         return simulated_data
-
-      data = np.random.normal(0, 1, 1000)
-      results = monte_carlo_function(data)
-      make_histograms(results,title)
-      
-The following code block executes the same tasks as the previous block, but using a bare approach, 
-meaning that it uses a single core to perform all 100,000 random samples.
-
-.. code-block:: python
-
-   title='data resampling (bare)'
-   with timethis(title):
-
-      def monte_carlo_function_bare(data, *args, **kwargs):
-         simulated_data = np.random.normal(np.mean(data), np.std(data))
-         return simulated_data
-
-      data = np.random.normal(0, 1, 1000)
-      results = [monte_carlo_function_bare(data) for i in range(100000)]
-      make_histograms(results,title)
-
-   plt.show()
-
-The output for the previous three code blocks is displayed below.
-
-.. |multicarlo| image:: ../img/multicarlo.png
-  :width: 320
+.. figure:: ../img/howtoclone.png
+  :width: 600
   :alt: Alternative text
-
-.. |multicarlo bare| image:: ../img/bare_multicarlo.png
-   :width: 320
-   :alt: Alternative text
-
-|multicarlo| |multicarlo bare|
-
->>> [OUT]
-monte carlo resampling (with @multicarlo -- 4 cores): 2.812 seconds
-monte carlo resampling (bare): 4.328 seconds
-
-Both approaches produce a similar random sampling distribution outcome, 
-but the ``@multicarlo`` decorated function that uses multiprocessing on 4 cores shows around 50% better runtime performance.
-
-Parallel Computation on Sectorized Matrices using Multiprocessing
--------------------------------------------------------------------------
-
-.. |cakerun scheme| image:: ../img/cakerun_concept.png
-  :width: 300
-  :alt: Alternative text
-  :target: https://github.com/andrewrgarcia/voxelmap
-
-.. |cake| image:: ../img/DALLE_cake.png
-  :width: 300
-  :alt: Alternative text
-  :target: https://github.com/andrewrgarcia/voxelmap
+  :target: https://github.com/andrewrgarcia/bifrost
 
 
-|cakerun scheme| |cake|
 
-The question of whether it's faster to eat a cake alone or have 100 people cut a slice and eat their portions until 
-it's gone highlights the main concept behind the cakerun decorator. 
-Essentially, the decorator partitions an array into a specified number of equally-sized sectors and performs 
-the same task on all sectors in parallel. 
+In the dropdown menu, you'll see a few options for cloning the repository.
+Select the one that says "HTTPS" if you're unfamiliar with the other options. Then, copy the provided code that appears in the box next to the "HTTPS" option.
 
+Next, open up your terminal or Git shell on your computer. In the terminal, navigate to the directory where you'd like to clone the repository (for example, ``~/Documents/``).
 
-In this example, we set the number of cores to 4 and compare the performance of using multiprocessing versus
-using a single core. Before proceeding, we import all necessary modules and define the draw function which is 
-used in both approaches to avoid redundancy. Additionally, we define the initial matrix, which is a 252 x 252 matrix of 1s,
-that will be operated on by both methodologies.
-
-.. code-block:: python
-
-   import tensorscout as scout
-   import numpy as np
-   import matplotlib.pyplot as plt
-   from timethis import timethis
-
-   num_iters = 40000
-
-   def draw(result):
-      plt.figure()
-      plt.title('{} -- $N_{{perforated}}$ = {}'.format(title, np.multiply(*result.shape) - np.count_nonzero(result)))
-      plt.imshow(result,cmap='bone')
+Once you're in the desired directory, paste the code you copied from the GitHub website into your terminal and press enter.
+This will initiate the cloning process, and the Bifrost repository will be copied to your local machine for you to access and work with.
 
 
-   matrix = np.ones((252,252))
 
-   plt.imshow(matrix,cmap='bone')
-   plt.title('initial canvas')
+Functional Organization Structure
+--------------------------------------
 
+The Bifrost project has a well-designed project structure that is both lean and functional. 
+At the highest level, we have high-level scripts such as compile.sh to manage the project. The ``proto/`` directory contains all the Protobuf schemas used to define data structures, 
+while the ``src/`` directory houses the source code for running these data structures. 
 
-..  image:: ../img/black_canvas.png
-  :width: 320
-  :alt: Alternative text
-
-
-In this example, the initial matrix is composed entirely of 1s and will appear as a single color when drawn. 
-The purpose of this code is to apply an operation called "perforation" to the matrix. At each iteration, 
-a random x-y coordinate is selected and the value at that location is set to 0.
-
-The first case demonstrates the use of the ``@cakerun`` decorator to split the matrix into sectors and apply
-the perforate function to each sector. The former code block specifies 40,000 perforating iterations, which for the case 
-of this aprroach has them evenly distributed across the 4 sectors, resulting in 10,000 iterations per sector, ocurring simultaneously.
-
-.. code-block:: python
-
-   title = 'cakerun MP (4 cores)'
-   with timethis("{}".format(title)):
-
-      cores = 4
-      @scout.cakerun(num_cores=cores, L_sectors=2)
-      def perforate(sector):
-         
-         for i in range(num_iters // cores):
-               cds = np.argwhere(sector!=0)
-               sector[tuple(cds[np.random.randint(cds.shape[0])])] = 0 
-         return sector
-
-      result = perforate(matrix)
-      draw(result)
-
-In the next code block, the perforating operation is applied for 40,000 iterations using a bare approach with a single processor. 
-Hence, there is no task split involved.
+To keep things organized, the ``src/`` directory is divided into subdirectories for different programming languages. 
+Additionally, the ``tests/`` directory has the same organizational structure as src, but is dedicated to test scripts for ensuring the system operates as expected. 
+This structure enables us to navigate and organize the project with ease, which is crucial for software development.
 
 
-.. code-block:: python
+.. code-block:: bash
+
+   bifrost/
+   ├── compile.sh
+   ├── proto/
+   │   ├── schema1.proto
+   │   ├── schema2.proto
+   │   ├── ...
+   │   └── schemaN.proto
+   ├── src/
+   │   ├── python/
+   │   │   ├── module1.py
+   │   │   ├── module2.py
+   │   │   ├── ...
+   │   │   └── moduleN.py
+   │   ├── javascript/
+   │   ├── cpp/
+   │   ├── java/
+   │   ├── go/
+   │   └── ...
+   ├── tests/
+   │   ├── python/
+   │   ├── javascript/
+   │   ├── cpp/
+   │   ├── java/
+   │   ├── go/
+   │   └── ...
+   └── ...
 
 
-   title = 'single core'
-   with timethis("{}".format(title)):
+Easy Compiling 
+---------------------
 
-      def perforate_bare(sector):
-         for i in range(num_iters):
-               cds = np.argwhere(sector!=0)
-               sector[tuple(cds[np.random.randint(cds.shape[0])])] = 0 
-         return sector
+We have made a simple shell script based on the protobuf `tutorials <https://protobuf.dev/getting-started/>`_ to compile our protobuf files in the ``bifrost/proto`` directory. To compile the 
+``.proto`` files to any language, simply execute the ``compile.sh`` script followed by the name of the programming language you wish to compile the protobuf file to. 
+
+For example, if you would like to compile all these files to cpp, type:
+
+>>> bash compile.sh cpp
+
+To do so in Python, type:
+
+>>> bash compile.sh python
+
+After running these 2 commands, cpp- and python-compatible compiled data structure files will be generated in new ``proto/`` directories to those languages housed within the ``src/`` folder, as below:
+
+.. code-block:: bash
+
+   bifrost/
+   │   ...
+   ├── src/
+   │   ├── python/
+   │   │   ├── proto/
+   │   │   ├── ...
+   │   ├── cpp/
+   │   │   ├── proto/
+   │   │   ├── ...
+   │   └── ...
+   └── ...
 
 
-      result = perforate_bare(matrix)
-      draw(result)
+The Proto Files 
+-------------------
+
+So far, we have created two Protobuf schemas, which are designed to facilitate the transfer of data structures between different programming languages. 
+These schemas specify the structure and data type of the information being transferred, enabling it to be defined in any language that supports Protobuf. 
 
 
-   plt.show()
+The first schema we designed handles a container called **Object** which consists of a string field and a one-dimensional array. It's worth noting that the different fields in this container must be indexed for easy access and manipulation.
+
+.. code-block:: protobuf
+
+   syntax = "proto3";
+
+   message Object {
+   string string_field = 1;
+   repeated int32 array_field = 2;
+   }
+
+The second schema we developed was created to handle a third-order numerical tensor called **NumTensor**. This schema was developed to support the author's interest in representing three-dimensional objects mathematically. The **NumTensor** schema allows for the efficient storage and manipulation of numerical data in a three-dimensional format, making it useful for a wide range of applications.
+
+.. code-block:: protobuf
+
+   syntax = "proto3";
+
+   message NumTensor {
+   repeated NumMatrix my_arrays = 1;
+   }
+
+   message NumMatrix {
+   repeated NumRow my_sub_arrays = 1;
+   }
+
+   message NumRow {
+   repeated int32 my_array = 1 [packed=true];
+   }
 
 
-The following are graphical and runtime comparisons of both methods:
+By using a programming language that supports Protobuf, we can easily create data structures based on the schemas we have defined. 
+To create an **Object** container and a **NumTensor** tensor with Python, we may call the relevant functions in the ``src`` directory housing the ``Python`` scripts, 
+which pass the necessary parameters as specified by our Protobuf schema.
 
-.. |cakerun| image:: ../img/cakerun.png
-  :width: 320
-  :alt: Alternative text
+The first function call is to a script which takes the **Object** object from ``proto/object.proto``, defining the string field as `hello world` and the array field as a list from 0 to 9: 
 
-.. |cakerun bare| image:: ../img/bare_cakerun.png
-   :width: 320
-   :alt: Alternative text
+>>> python src/python/message.py 
+string_field: "hello world"
+array_field: 0
+array_field: 1
+array_field: 2
+array_field: 3
+array_field: 4
+array_field: 5
+array_field: 6
+array_field: 7
+array_field: 8
+array_field: 9
 
-|cakerun| |cakerun bare|
+The second function call applies the **NumTensor** object from the ``proto/tensors.proto`` file to make a 3x3x3 tensor with random numbers from 0 to 99:
 
->>> [OUT]
-cakerun MP (4 cores): 2.968 seconds
-single core: 25.868 seconds
+>>> python src/python/num_tensors.py 
+my_arrays {
+  my_sub_arrays {
+    my_array: 66
+    my_array: 43
+    my_array: 51
+  }
+  my_sub_arrays {
+    my_array: 1
+    my_array: 30
+    my_array: 72
+  }
+  my_sub_arrays {
+    my_array: 50
+    my_array: 41
+    my_array: 20
+  }
+}
+my_arrays {
+  my_sub_arrays {
+    my_array: 91
+    my_array: 88
+    my_array: 69
+  }
+  my_sub_arrays {
+    my_array: 6
+    my_array: 43
+    my_array: 23
+  }
+  my_sub_arrays {
+    my_array: 38
+    my_array: 39
+    my_array: 85
+  }
+}
+my_arrays {
+  my_sub_arrays {
+    my_array: 20
+    my_array: 69
+    my_array: 94
+  }
+  my_sub_arrays {
+    my_array: 35
+    my_array: 91
+    my_array: 5
+  }
+  my_sub_arrays {
+    my_array: 34
+    my_array: 81
+    my_array: 15
+  }
+}
 
-It is apparent that both approaches yield a similar outcome and have 
-the same number of perforations. However, the ``@cakerun`` decorated function, which uses four 
-cores simultaneously, has a runtime that is 8-9 times faster than the bare approach.
+
