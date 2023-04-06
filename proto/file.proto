@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message MyMessage {
+  string string_field = 1;
+  repeated int32 array_field = 2;
+}
+

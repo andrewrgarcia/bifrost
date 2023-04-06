@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+message NumTensor {
+  repeated NumMatrix my_arrays = 1;
+}
+
+message NumMatrix {
+  repeated NumRow my_sub_arrays = 1;
+}
+
+message NumRow {
+  repeated int32 my_array = 1 [packed=true];
+}
