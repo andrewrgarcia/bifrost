@@ -5,7 +5,7 @@
 
 int main() {
   // declare a numeric tensor from `NumTensor` protobuf
-  NumTensor tensor_3d;
+  proto::NumTensor tensor_3d;
 
 
   // deserialize the tensor from the file

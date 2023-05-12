@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/tensors.proto\"*\n\tNumTensor\x12\x1d\n\tmy_arrays\x18\x01 \x03(\x0b\x32\n.NumMatrix\"+\n\tNumMatrix\x12\x1e\n\rmy_sub_arrays\x18\x01 \x03(\x0b\x32\x07.NumRow\"\x1e\n\x06NumRow\x12\x14\n\x08my_array\x18\x01 \x03(\x05\x42\x02\x10\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13proto/tensors.proto\x12\x05proto\"0\n\tNumTensor\x12#\n\tmy_arrays\x18\x01 \x03(\x0b\x32\x10.proto.NumMatrix\"1\n\tNumMatrix\x12$\n\rmy_sub_arrays\x18\x01 \x03(\x0b\x32\r.proto.NumRow\"\x1e\n\x06NumRow\x12\x14\n\x08my_array\x18\x01 \x03(\x05\x42\x02\x10\x01')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'proto.tensors_pb2', globals())
@@ -22,10 +22,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   _NUMROW.fields_by_name['my_array']._options = None
   _NUMROW.fields_by_name['my_array']._serialized_options = b'\020\001'
-  _NUMTENSOR._serialized_start=23
-  _NUMTENSOR._serialized_end=65
-  _NUMMATRIX._serialized_start=67
-  _NUMMATRIX._serialized_end=110
-  _NUMROW._serialized_start=112
-  _NUMROW._serialized_end=142
+  _NUMTENSOR._serialized_start=30
+  _NUMTENSOR._serialized_end=78
+  _NUMMATRIX._serialized_start=80
+  _NUMMATRIX._serialized_end=129
+  _NUMROW._serialized_start=131
+  _NUMROW._serialized_end=161
 # @@protoc_insertion_point(module_scope)

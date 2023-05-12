@@ -44,17 +44,20 @@ struct TableStruct_proto_2fobject_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2fobject_2eproto;
+namespace proto {
 class Object;
 struct ObjectDefaultTypeInternal;
 extern ObjectDefaultTypeInternal _Object_default_instance_;
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
-template<> ::Object* Arena::CreateMaybeMessage<::Object>(Arena*);
+template<> ::proto::Object* Arena::CreateMaybeMessage<::proto::Object>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
+namespace proto {
 
 // ===================================================================
 
 class Object final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Object) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.Object) */ {
  public:
   inline Object() : Object(nullptr) {}
   ~Object() override;
@@ -157,7 +160,7 @@ class Object final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Object";
+    return "proto.Object";
   }
   protected:
   explicit Object(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -213,7 +216,7 @@ class Object final :
   std::string* _internal_mutable_string_field();
   public:
 
-  // @@protoc_insertion_point(class_scope:Object)
+  // @@protoc_insertion_point(class_scope:proto.Object)
  private:
   class _Internal;
 
@@ -245,7 +248,7 @@ inline void Object::clear_string_field() {
   _impl_.string_field_.ClearToEmpty();
 }
 inline const std::string& Object::string_field() const {
-  // @@protoc_insertion_point(field_get:Object.string_field)
+  // @@protoc_insertion_point(field_get:proto.Object.string_field)
   return _internal_string_field();
 }
 template <typename ArgT0, typename... ArgT>
@@ -253,11 +256,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void Object::set_string_field(ArgT0&& arg0, ArgT... args) {
  
  _impl_.string_field_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Object.string_field)
+  // @@protoc_insertion_point(field_set:proto.Object.string_field)
 }
 inline std::string* Object::mutable_string_field() {
   std::string* _s = _internal_mutable_string_field();
-  // @@protoc_insertion_point(field_mutable:Object.string_field)
+  // @@protoc_insertion_point(field_mutable:proto.Object.string_field)
   return _s;
 }
 inline const std::string& Object::_internal_string_field() const {
@@ -272,7 +275,7 @@ inline std::string* Object::_internal_mutable_string_field() {
   return _impl_.string_field_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Object::release_string_field() {
-  // @@protoc_insertion_point(field_release:Object.string_field)
+  // @@protoc_insertion_point(field_release:proto.Object.string_field)
   return _impl_.string_field_.Release();
 }
 inline void Object::set_allocated_string_field(std::string* string_field) {
@@ -287,7 +290,7 @@ inline void Object::set_allocated_string_field(std::string* string_field) {
     _impl_.string_field_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Object.string_field)
+  // @@protoc_insertion_point(field_set_allocated:proto.Object.string_field)
 }
 
 // repeated int32 array_field = 2;
@@ -304,19 +307,19 @@ inline int32_t Object::_internal_array_field(int index) const {
   return _impl_.array_field_.Get(index);
 }
 inline int32_t Object::array_field(int index) const {
-  // @@protoc_insertion_point(field_get:Object.array_field)
+  // @@protoc_insertion_point(field_get:proto.Object.array_field)
   return _internal_array_field(index);
 }
 inline void Object::set_array_field(int index, int32_t value) {
   _impl_.array_field_.Set(index, value);
-  // @@protoc_insertion_point(field_set:Object.array_field)
+  // @@protoc_insertion_point(field_set:proto.Object.array_field)
 }
 inline void Object::_internal_add_array_field(int32_t value) {
   _impl_.array_field_.Add(value);
 }
 inline void Object::add_array_field(int32_t value) {
   _internal_add_array_field(value);
-  // @@protoc_insertion_point(field_add:Object.array_field)
+  // @@protoc_insertion_point(field_add:proto.Object.array_field)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
 Object::_internal_array_field() const {
@@ -324,7 +327,7 @@ Object::_internal_array_field() const {
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
 Object::array_field() const {
-  // @@protoc_insertion_point(field_list:Object.array_field)
+  // @@protoc_insertion_point(field_list:proto.Object.array_field)
   return _internal_array_field();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
@@ -333,7 +336,7 @@ Object::_internal_mutable_array_field() {
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
 Object::mutable_array_field() {
-  // @@protoc_insertion_point(field_mutable_list:Object.array_field)
+  // @@protoc_insertion_point(field_mutable_list:proto.Object.array_field)
   return _internal_mutable_array_field();
 }
 
@@ -343,6 +346,7 @@ Object::mutable_array_field() {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace proto
 
 // @@protoc_insertion_point(global_scope)
 

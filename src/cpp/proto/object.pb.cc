@@ -20,6 +20,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
+namespace proto {
 PROTOBUF_CONSTEXPR Object::Object(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.array_field_)*/{}
@@ -35,38 +36,39 @@ struct ObjectDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ObjectDefaultTypeInternal _Object_default_instance_;
+}  // namespace proto
 static ::_pb::Metadata file_level_metadata_proto_2fobject_2eproto[1];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_proto_2fobject_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_proto_2fobject_2eproto = nullptr;
 
 const uint32_t TableStruct_proto_2fobject_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Object, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::Object, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _split_
   ~0u,  // no sizeof(Split)
-  PROTOBUF_FIELD_OFFSET(::Object, _impl_.string_field_),
-  PROTOBUF_FIELD_OFFSET(::Object, _impl_.array_field_),
+  PROTOBUF_FIELD_OFFSET(::proto::Object, _impl_.string_field_),
+  PROTOBUF_FIELD_OFFSET(::proto::Object, _impl_.array_field_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::Object)},
+  { 0, -1, -1, sizeof(::proto::Object)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::_Object_default_instance_._instance,
+  &::proto::_Object_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_proto_2fobject_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\022proto/object.proto\"3\n\006Object\022\024\n\014string"
-  "_field\030\001 \001(\t\022\023\n\013array_field\030\002 \003(\005b\006proto"
-  "3"
+  "\n\022proto/object.proto\022\005proto\"3\n\006Object\022\024\n"
+  "\014string_field\030\001 \001(\t\022\023\n\013array_field\030\002 \003(\005"
+  "b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_proto_2fobject_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proto_2fobject_2eproto = {
-    false, false, 81, descriptor_table_protodef_proto_2fobject_2eproto,
+    false, false, 88, descriptor_table_protodef_proto_2fobject_2eproto,
     "proto/object.proto",
     &descriptor_table_proto_2fobject_2eproto_once, nullptr, 0, 1,
     schemas, file_default_instances, TableStruct_proto_2fobject_2eproto::offsets,
@@ -79,6 +81,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_proto_2f
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_proto_2fobject_2eproto(&descriptor_table_proto_2fobject_2eproto);
+namespace proto {
 
 // ===================================================================
 
@@ -90,7 +93,7 @@ Object::Object(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Object)
+  // @@protoc_insertion_point(arena_constructor:proto.Object)
 }
 Object::Object(const Object& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -110,7 +113,7 @@ Object::Object(const Object& from)
     _this->_impl_.string_field_.Set(from._internal_string_field(), 
       _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:Object)
+  // @@protoc_insertion_point(copy_constructor:proto.Object)
 }
 
 inline void Object::SharedCtor(
@@ -130,7 +133,7 @@ inline void Object::SharedCtor(
 }
 
 Object::~Object() {
-  // @@protoc_insertion_point(destructor:Object)
+  // @@protoc_insertion_point(destructor:proto.Object)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -149,7 +152,7 @@ void Object::SetCachedSize(int size) const {
 }
 
 void Object::Clear() {
-// @@protoc_insertion_point(message_clear_start:Object)
+// @@protoc_insertion_point(message_clear_start:proto.Object)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -171,7 +174,7 @@ const char* Object::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
           auto str = _internal_mutable_string_field();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Object.string_field"));
+          CHK_(::_pbi::VerifyUTF8(str, "proto.Object.string_field"));
         } else
           goto handle_unusual;
         continue;
@@ -211,7 +214,7 @@ failure:
 
 uint8_t* Object::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Object)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.Object)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -220,7 +223,7 @@ uint8_t* Object::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_string_field().data(), static_cast<int>(this->_internal_string_field().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Object.string_field");
+      "proto.Object.string_field");
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_string_field(), target);
   }
@@ -238,12 +241,12 @@ uint8_t* Object::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Object)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.Object)
   return target;
 }
 
 size_t Object::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Object)
+// @@protoc_insertion_point(message_byte_size_start:proto.Object)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -283,7 +286,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Object::GetClassData() const {
 void Object::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Object*>(&to_msg);
   auto& from = static_cast<const Object&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Object)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.Object)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -296,7 +299,7 @@ void Object::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
 }
 
 void Object::CopyFrom(const Object& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Object)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.Object)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -325,10 +328,11 @@ void Object::InternalSwap(Object* other) {
 }
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::Object*
-Arena::CreateMaybeMessage< ::Object >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Object >(arena);
+template<> PROTOBUF_NOINLINE ::proto::Object*
+Arena::CreateMaybeMessage< ::proto::Object >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::Object >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

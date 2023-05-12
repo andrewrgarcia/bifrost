@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package proto;
+
 message NumTensor {
   repeated NumMatrix my_arrays = 1;
 }

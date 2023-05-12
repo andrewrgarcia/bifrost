@@ -20,6 +20,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
+namespace proto {
 PROTOBUF_CONSTEXPR NumTensor::NumTensor(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.my_arrays_)*/{}
@@ -60,60 +61,62 @@ struct NumRowDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NumRowDefaultTypeInternal _NumRow_default_instance_;
+}  // namespace proto
 static ::_pb::Metadata file_level_metadata_proto_2ftensors_2eproto[3];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_proto_2ftensors_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_proto_2ftensors_2eproto = nullptr;
 
 const uint32_t TableStruct_proto_2ftensors_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::NumTensor, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::NumTensor, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _split_
   ~0u,  // no sizeof(Split)
-  PROTOBUF_FIELD_OFFSET(::NumTensor, _impl_.my_arrays_),
+  PROTOBUF_FIELD_OFFSET(::proto::NumTensor, _impl_.my_arrays_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::NumMatrix, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::NumMatrix, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _split_
   ~0u,  // no sizeof(Split)
-  PROTOBUF_FIELD_OFFSET(::NumMatrix, _impl_.my_sub_arrays_),
+  PROTOBUF_FIELD_OFFSET(::proto::NumMatrix, _impl_.my_sub_arrays_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::NumRow, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::proto::NumRow, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   ~0u,  // no _split_
   ~0u,  // no sizeof(Split)
-  PROTOBUF_FIELD_OFFSET(::NumRow, _impl_.my_array_),
+  PROTOBUF_FIELD_OFFSET(::proto::NumRow, _impl_.my_array_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::NumTensor)},
-  { 9, -1, -1, sizeof(::NumMatrix)},
-  { 18, -1, -1, sizeof(::NumRow)},
+  { 0, -1, -1, sizeof(::proto::NumTensor)},
+  { 9, -1, -1, sizeof(::proto::NumMatrix)},
+  { 18, -1, -1, sizeof(::proto::NumRow)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::_NumTensor_default_instance_._instance,
-  &::_NumMatrix_default_instance_._instance,
-  &::_NumRow_default_instance_._instance,
+  &::proto::_NumTensor_default_instance_._instance,
+  &::proto::_NumMatrix_default_instance_._instance,
+  &::proto::_NumRow_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_proto_2ftensors_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\023proto/tensors.proto\"*\n\tNumTensor\022\035\n\tmy"
-  "_arrays\030\001 \003(\0132\n.NumMatrix\"+\n\tNumMatrix\022\036"
-  "\n\rmy_sub_arrays\030\001 \003(\0132\007.NumRow\"\036\n\006NumRow"
-  "\022\024\n\010my_array\030\001 \003(\005B\002\020\001b\006proto3"
+  "\n\023proto/tensors.proto\022\005proto\"0\n\tNumTenso"
+  "r\022#\n\tmy_arrays\030\001 \003(\0132\020.proto.NumMatrix\"1"
+  "\n\tNumMatrix\022$\n\rmy_sub_arrays\030\001 \003(\0132\r.pro"
+  "to.NumRow\"\036\n\006NumRow\022\024\n\010my_array\030\001 \003(\005B\002\020"
+  "\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_proto_2ftensors_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_proto_2ftensors_2eproto = {
-    false, false, 150, descriptor_table_protodef_proto_2ftensors_2eproto,
+    false, false, 169, descriptor_table_protodef_proto_2ftensors_2eproto,
     "proto/tensors.proto",
     &descriptor_table_proto_2ftensors_2eproto_once, nullptr, 0, 3,
     schemas, file_default_instances, TableStruct_proto_2ftensors_2eproto::offsets,
@@ -126,6 +129,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_proto_2f
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_proto_2ftensors_2eproto(&descriptor_table_proto_2ftensors_2eproto);
+namespace proto {
 
 // ===================================================================
 
@@ -137,7 +141,7 @@ NumTensor::NumTensor(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:NumTensor)
+  // @@protoc_insertion_point(arena_constructor:proto.NumTensor)
 }
 NumTensor::NumTensor(const NumTensor& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -147,7 +151,7 @@ NumTensor::NumTensor(const NumTensor& from)
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:NumTensor)
+  // @@protoc_insertion_point(copy_constructor:proto.NumTensor)
 }
 
 inline void NumTensor::SharedCtor(
@@ -161,7 +165,7 @@ inline void NumTensor::SharedCtor(
 }
 
 NumTensor::~NumTensor() {
-  // @@protoc_insertion_point(destructor:NumTensor)
+  // @@protoc_insertion_point(destructor:proto.NumTensor)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -179,7 +183,7 @@ void NumTensor::SetCachedSize(int size) const {
 }
 
 void NumTensor::Clear() {
-// @@protoc_insertion_point(message_clear_start:NumTensor)
+// @@protoc_insertion_point(message_clear_start:proto.NumTensor)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -194,7 +198,7 @@ const char* NumTensor::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .NumMatrix my_arrays = 1;
+      // repeated .proto.NumMatrix my_arrays = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
@@ -232,11 +236,11 @@ failure:
 
 uint8_t* NumTensor::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:NumTensor)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.NumTensor)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .NumMatrix my_arrays = 1;
+  // repeated .proto.NumMatrix my_arrays = 1;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_my_arrays_size()); i < n; i++) {
     const auto& repfield = this->_internal_my_arrays(i);
@@ -248,19 +252,19 @@ uint8_t* NumTensor::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:NumTensor)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.NumTensor)
   return target;
 }
 
 size_t NumTensor::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:NumTensor)
+// @@protoc_insertion_point(message_byte_size_start:proto.NumTensor)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .NumMatrix my_arrays = 1;
+  // repeated .proto.NumMatrix my_arrays = 1;
   total_size += 1UL * this->_internal_my_arrays_size();
   for (const auto& msg : this->_impl_.my_arrays_) {
     total_size +=
@@ -280,7 +284,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NumTensor::GetClassData() cons
 void NumTensor::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<NumTensor*>(&to_msg);
   auto& from = static_cast<const NumTensor&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:NumTensor)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.NumTensor)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -290,7 +294,7 @@ void NumTensor::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROT
 }
 
 void NumTensor::CopyFrom(const NumTensor& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:NumTensor)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.NumTensor)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -322,7 +326,7 @@ NumMatrix::NumMatrix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:NumMatrix)
+  // @@protoc_insertion_point(arena_constructor:proto.NumMatrix)
 }
 NumMatrix::NumMatrix(const NumMatrix& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -332,7 +336,7 @@ NumMatrix::NumMatrix(const NumMatrix& from)
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:NumMatrix)
+  // @@protoc_insertion_point(copy_constructor:proto.NumMatrix)
 }
 
 inline void NumMatrix::SharedCtor(
@@ -346,7 +350,7 @@ inline void NumMatrix::SharedCtor(
 }
 
 NumMatrix::~NumMatrix() {
-  // @@protoc_insertion_point(destructor:NumMatrix)
+  // @@protoc_insertion_point(destructor:proto.NumMatrix)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -364,7 +368,7 @@ void NumMatrix::SetCachedSize(int size) const {
 }
 
 void NumMatrix::Clear() {
-// @@protoc_insertion_point(message_clear_start:NumMatrix)
+// @@protoc_insertion_point(message_clear_start:proto.NumMatrix)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -379,7 +383,7 @@ const char* NumMatrix::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // repeated .NumRow my_sub_arrays = 1;
+      // repeated .proto.NumRow my_sub_arrays = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr -= 1;
@@ -417,11 +421,11 @@ failure:
 
 uint8_t* NumMatrix::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:NumMatrix)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.NumMatrix)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // repeated .NumRow my_sub_arrays = 1;
+  // repeated .proto.NumRow my_sub_arrays = 1;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_my_sub_arrays_size()); i < n; i++) {
     const auto& repfield = this->_internal_my_sub_arrays(i);
@@ -433,19 +437,19 @@ uint8_t* NumMatrix::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:NumMatrix)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.NumMatrix)
   return target;
 }
 
 size_t NumMatrix::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:NumMatrix)
+// @@protoc_insertion_point(message_byte_size_start:proto.NumMatrix)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .NumRow my_sub_arrays = 1;
+  // repeated .proto.NumRow my_sub_arrays = 1;
   total_size += 1UL * this->_internal_my_sub_arrays_size();
   for (const auto& msg : this->_impl_.my_sub_arrays_) {
     total_size +=
@@ -465,7 +469,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NumMatrix::GetClassData() cons
 void NumMatrix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<NumMatrix*>(&to_msg);
   auto& from = static_cast<const NumMatrix&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:NumMatrix)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.NumMatrix)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -475,7 +479,7 @@ void NumMatrix::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROT
 }
 
 void NumMatrix::CopyFrom(const NumMatrix& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:NumMatrix)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.NumMatrix)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -507,7 +511,7 @@ NumRow::NumRow(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:NumRow)
+  // @@protoc_insertion_point(arena_constructor:proto.NumRow)
 }
 NumRow::NumRow(const NumRow& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -518,7 +522,7 @@ NumRow::NumRow(const NumRow& from)
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:NumRow)
+  // @@protoc_insertion_point(copy_constructor:proto.NumRow)
 }
 
 inline void NumRow::SharedCtor(
@@ -533,7 +537,7 @@ inline void NumRow::SharedCtor(
 }
 
 NumRow::~NumRow() {
-  // @@protoc_insertion_point(destructor:NumRow)
+  // @@protoc_insertion_point(destructor:proto.NumRow)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -551,7 +555,7 @@ void NumRow::SetCachedSize(int size) const {
 }
 
 void NumRow::Clear() {
-// @@protoc_insertion_point(message_clear_start:NumRow)
+// @@protoc_insertion_point(message_clear_start:proto.NumRow)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -602,7 +606,7 @@ failure:
 
 uint8_t* NumRow::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:NumRow)
+  // @@protoc_insertion_point(serialize_to_array_start:proto.NumRow)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -619,12 +623,12 @@ uint8_t* NumRow::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:NumRow)
+  // @@protoc_insertion_point(serialize_to_array_end:proto.NumRow)
   return target;
 }
 
 size_t NumRow::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:NumRow)
+// @@protoc_insertion_point(message_byte_size_start:proto.NumRow)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -657,7 +661,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NumRow::GetClassData() const {
 void NumRow::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<NumRow*>(&to_msg);
   auto& from = static_cast<const NumRow&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:NumRow)
+  // @@protoc_insertion_point(class_specific_merge_from_start:proto.NumRow)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -667,7 +671,7 @@ void NumRow::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
 }
 
 void NumRow::CopyFrom(const NumRow& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:NumRow)
+// @@protoc_insertion_point(class_specific_copy_from_start:proto.NumRow)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -690,18 +694,19 @@ void NumRow::InternalSwap(NumRow* other) {
 }
 
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::NumTensor*
-Arena::CreateMaybeMessage< ::NumTensor >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::NumTensor >(arena);
+template<> PROTOBUF_NOINLINE ::proto::NumTensor*
+Arena::CreateMaybeMessage< ::proto::NumTensor >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::NumTensor >(arena);
 }
-template<> PROTOBUF_NOINLINE ::NumMatrix*
-Arena::CreateMaybeMessage< ::NumMatrix >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::NumMatrix >(arena);
+template<> PROTOBUF_NOINLINE ::proto::NumMatrix*
+Arena::CreateMaybeMessage< ::proto::NumMatrix >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::NumMatrix >(arena);
 }
-template<> PROTOBUF_NOINLINE ::NumRow*
-Arena::CreateMaybeMessage< ::NumRow >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::NumRow >(arena);
+template<> PROTOBUF_NOINLINE ::proto::NumRow*
+Arena::CreateMaybeMessage< ::proto::NumRow >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::proto::NumRow >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

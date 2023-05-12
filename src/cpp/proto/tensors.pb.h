@@ -44,6 +44,7 @@ struct TableStruct_proto_2ftensors_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_proto_2ftensors_2eproto;
+namespace proto {
 class NumMatrix;
 struct NumMatrixDefaultTypeInternal;
 extern NumMatrixDefaultTypeInternal _NumMatrix_default_instance_;
@@ -53,16 +54,18 @@ extern NumRowDefaultTypeInternal _NumRow_default_instance_;
 class NumTensor;
 struct NumTensorDefaultTypeInternal;
 extern NumTensorDefaultTypeInternal _NumTensor_default_instance_;
+}  // namespace proto
 PROTOBUF_NAMESPACE_OPEN
-template<> ::NumMatrix* Arena::CreateMaybeMessage<::NumMatrix>(Arena*);
-template<> ::NumRow* Arena::CreateMaybeMessage<::NumRow>(Arena*);
-template<> ::NumTensor* Arena::CreateMaybeMessage<::NumTensor>(Arena*);
+template<> ::proto::NumMatrix* Arena::CreateMaybeMessage<::proto::NumMatrix>(Arena*);
+template<> ::proto::NumRow* Arena::CreateMaybeMessage<::proto::NumRow>(Arena*);
+template<> ::proto::NumTensor* Arena::CreateMaybeMessage<::proto::NumTensor>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
+namespace proto {
 
 // ===================================================================
 
 class NumTensor final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NumTensor) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.NumTensor) */ {
  public:
   inline NumTensor() : NumTensor(nullptr) {}
   ~NumTensor() override;
@@ -165,7 +168,7 @@ class NumTensor final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "NumTensor";
+    return "proto.NumTensor";
   }
   protected:
   explicit NumTensor(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -184,25 +187,25 @@ class NumTensor final :
   enum : int {
     kMyArraysFieldNumber = 1,
   };
-  // repeated .NumMatrix my_arrays = 1;
+  // repeated .proto.NumMatrix my_arrays = 1;
   int my_arrays_size() const;
   private:
   int _internal_my_arrays_size() const;
   public:
   void clear_my_arrays();
-  ::NumMatrix* mutable_my_arrays(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumMatrix >*
+  ::proto::NumMatrix* mutable_my_arrays(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumMatrix >*
       mutable_my_arrays();
   private:
-  const ::NumMatrix& _internal_my_arrays(int index) const;
-  ::NumMatrix* _internal_add_my_arrays();
+  const ::proto::NumMatrix& _internal_my_arrays(int index) const;
+  ::proto::NumMatrix* _internal_add_my_arrays();
   public:
-  const ::NumMatrix& my_arrays(int index) const;
-  ::NumMatrix* add_my_arrays();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumMatrix >&
+  const ::proto::NumMatrix& my_arrays(int index) const;
+  ::proto::NumMatrix* add_my_arrays();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumMatrix >&
       my_arrays() const;
 
-  // @@protoc_insertion_point(class_scope:NumTensor)
+  // @@protoc_insertion_point(class_scope:proto.NumTensor)
  private:
   class _Internal;
 
@@ -210,7 +213,7 @@ class NumTensor final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumMatrix > my_arrays_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumMatrix > my_arrays_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -219,7 +222,7 @@ class NumTensor final :
 // -------------------------------------------------------------------
 
 class NumMatrix final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NumMatrix) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.NumMatrix) */ {
  public:
   inline NumMatrix() : NumMatrix(nullptr) {}
   ~NumMatrix() override;
@@ -322,7 +325,7 @@ class NumMatrix final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "NumMatrix";
+    return "proto.NumMatrix";
   }
   protected:
   explicit NumMatrix(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -341,25 +344,25 @@ class NumMatrix final :
   enum : int {
     kMySubArraysFieldNumber = 1,
   };
-  // repeated .NumRow my_sub_arrays = 1;
+  // repeated .proto.NumRow my_sub_arrays = 1;
   int my_sub_arrays_size() const;
   private:
   int _internal_my_sub_arrays_size() const;
   public:
   void clear_my_sub_arrays();
-  ::NumRow* mutable_my_sub_arrays(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumRow >*
+  ::proto::NumRow* mutable_my_sub_arrays(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumRow >*
       mutable_my_sub_arrays();
   private:
-  const ::NumRow& _internal_my_sub_arrays(int index) const;
-  ::NumRow* _internal_add_my_sub_arrays();
+  const ::proto::NumRow& _internal_my_sub_arrays(int index) const;
+  ::proto::NumRow* _internal_add_my_sub_arrays();
   public:
-  const ::NumRow& my_sub_arrays(int index) const;
-  ::NumRow* add_my_sub_arrays();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumRow >&
+  const ::proto::NumRow& my_sub_arrays(int index) const;
+  ::proto::NumRow* add_my_sub_arrays();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumRow >&
       my_sub_arrays() const;
 
-  // @@protoc_insertion_point(class_scope:NumMatrix)
+  // @@protoc_insertion_point(class_scope:proto.NumMatrix)
  private:
   class _Internal;
 
@@ -367,7 +370,7 @@ class NumMatrix final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumRow > my_sub_arrays_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumRow > my_sub_arrays_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -376,7 +379,7 @@ class NumMatrix final :
 // -------------------------------------------------------------------
 
 class NumRow final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:NumRow) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:proto.NumRow) */ {
  public:
   inline NumRow() : NumRow(nullptr) {}
   ~NumRow() override;
@@ -479,7 +482,7 @@ class NumRow final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "NumRow";
+    return "proto.NumRow";
   }
   protected:
   explicit NumRow(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -520,7 +523,7 @@ class NumRow final :
   ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
       mutable_my_array();
 
-  // @@protoc_insertion_point(class_scope:NumRow)
+  // @@protoc_insertion_point(class_scope:proto.NumRow)
  private:
   class _Internal;
 
@@ -546,7 +549,7 @@ class NumRow final :
 #endif  // __GNUC__
 // NumTensor
 
-// repeated .NumMatrix my_arrays = 1;
+// repeated .proto.NumMatrix my_arrays = 1;
 inline int NumTensor::_internal_my_arrays_size() const {
   return _impl_.my_arrays_.size();
 }
@@ -556,33 +559,33 @@ inline int NumTensor::my_arrays_size() const {
 inline void NumTensor::clear_my_arrays() {
   _impl_.my_arrays_.Clear();
 }
-inline ::NumMatrix* NumTensor::mutable_my_arrays(int index) {
-  // @@protoc_insertion_point(field_mutable:NumTensor.my_arrays)
+inline ::proto::NumMatrix* NumTensor::mutable_my_arrays(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.NumTensor.my_arrays)
   return _impl_.my_arrays_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumMatrix >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumMatrix >*
 NumTensor::mutable_my_arrays() {
-  // @@protoc_insertion_point(field_mutable_list:NumTensor.my_arrays)
+  // @@protoc_insertion_point(field_mutable_list:proto.NumTensor.my_arrays)
   return &_impl_.my_arrays_;
 }
-inline const ::NumMatrix& NumTensor::_internal_my_arrays(int index) const {
+inline const ::proto::NumMatrix& NumTensor::_internal_my_arrays(int index) const {
   return _impl_.my_arrays_.Get(index);
 }
-inline const ::NumMatrix& NumTensor::my_arrays(int index) const {
-  // @@protoc_insertion_point(field_get:NumTensor.my_arrays)
+inline const ::proto::NumMatrix& NumTensor::my_arrays(int index) const {
+  // @@protoc_insertion_point(field_get:proto.NumTensor.my_arrays)
   return _internal_my_arrays(index);
 }
-inline ::NumMatrix* NumTensor::_internal_add_my_arrays() {
+inline ::proto::NumMatrix* NumTensor::_internal_add_my_arrays() {
   return _impl_.my_arrays_.Add();
 }
-inline ::NumMatrix* NumTensor::add_my_arrays() {
-  ::NumMatrix* _add = _internal_add_my_arrays();
-  // @@protoc_insertion_point(field_add:NumTensor.my_arrays)
+inline ::proto::NumMatrix* NumTensor::add_my_arrays() {
+  ::proto::NumMatrix* _add = _internal_add_my_arrays();
+  // @@protoc_insertion_point(field_add:proto.NumTensor.my_arrays)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumMatrix >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumMatrix >&
 NumTensor::my_arrays() const {
-  // @@protoc_insertion_point(field_list:NumTensor.my_arrays)
+  // @@protoc_insertion_point(field_list:proto.NumTensor.my_arrays)
   return _impl_.my_arrays_;
 }
 
@@ -590,7 +593,7 @@ NumTensor::my_arrays() const {
 
 // NumMatrix
 
-// repeated .NumRow my_sub_arrays = 1;
+// repeated .proto.NumRow my_sub_arrays = 1;
 inline int NumMatrix::_internal_my_sub_arrays_size() const {
   return _impl_.my_sub_arrays_.size();
 }
@@ -600,33 +603,33 @@ inline int NumMatrix::my_sub_arrays_size() const {
 inline void NumMatrix::clear_my_sub_arrays() {
   _impl_.my_sub_arrays_.Clear();
 }
-inline ::NumRow* NumMatrix::mutable_my_sub_arrays(int index) {
-  // @@protoc_insertion_point(field_mutable:NumMatrix.my_sub_arrays)
+inline ::proto::NumRow* NumMatrix::mutable_my_sub_arrays(int index) {
+  // @@protoc_insertion_point(field_mutable:proto.NumMatrix.my_sub_arrays)
   return _impl_.my_sub_arrays_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumRow >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumRow >*
 NumMatrix::mutable_my_sub_arrays() {
-  // @@protoc_insertion_point(field_mutable_list:NumMatrix.my_sub_arrays)
+  // @@protoc_insertion_point(field_mutable_list:proto.NumMatrix.my_sub_arrays)
   return &_impl_.my_sub_arrays_;
 }
-inline const ::NumRow& NumMatrix::_internal_my_sub_arrays(int index) const {
+inline const ::proto::NumRow& NumMatrix::_internal_my_sub_arrays(int index) const {
   return _impl_.my_sub_arrays_.Get(index);
 }
-inline const ::NumRow& NumMatrix::my_sub_arrays(int index) const {
-  // @@protoc_insertion_point(field_get:NumMatrix.my_sub_arrays)
+inline const ::proto::NumRow& NumMatrix::my_sub_arrays(int index) const {
+  // @@protoc_insertion_point(field_get:proto.NumMatrix.my_sub_arrays)
   return _internal_my_sub_arrays(index);
 }
-inline ::NumRow* NumMatrix::_internal_add_my_sub_arrays() {
+inline ::proto::NumRow* NumMatrix::_internal_add_my_sub_arrays() {
   return _impl_.my_sub_arrays_.Add();
 }
-inline ::NumRow* NumMatrix::add_my_sub_arrays() {
-  ::NumRow* _add = _internal_add_my_sub_arrays();
-  // @@protoc_insertion_point(field_add:NumMatrix.my_sub_arrays)
+inline ::proto::NumRow* NumMatrix::add_my_sub_arrays() {
+  ::proto::NumRow* _add = _internal_add_my_sub_arrays();
+  // @@protoc_insertion_point(field_add:proto.NumMatrix.my_sub_arrays)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::NumRow >&
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::proto::NumRow >&
 NumMatrix::my_sub_arrays() const {
-  // @@protoc_insertion_point(field_list:NumMatrix.my_sub_arrays)
+  // @@protoc_insertion_point(field_list:proto.NumMatrix.my_sub_arrays)
   return _impl_.my_sub_arrays_;
 }
 
@@ -648,19 +651,19 @@ inline int32_t NumRow::_internal_my_array(int index) const {
   return _impl_.my_array_.Get(index);
 }
 inline int32_t NumRow::my_array(int index) const {
-  // @@protoc_insertion_point(field_get:NumRow.my_array)
+  // @@protoc_insertion_point(field_get:proto.NumRow.my_array)
   return _internal_my_array(index);
 }
 inline void NumRow::set_my_array(int index, int32_t value) {
   _impl_.my_array_.Set(index, value);
-  // @@protoc_insertion_point(field_set:NumRow.my_array)
+  // @@protoc_insertion_point(field_set:proto.NumRow.my_array)
 }
 inline void NumRow::_internal_add_my_array(int32_t value) {
   _impl_.my_array_.Add(value);
 }
 inline void NumRow::add_my_array(int32_t value) {
   _internal_add_my_array(value);
-  // @@protoc_insertion_point(field_add:NumRow.my_array)
+  // @@protoc_insertion_point(field_add:proto.NumRow.my_array)
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
 NumRow::_internal_my_array() const {
@@ -668,7 +671,7 @@ NumRow::_internal_my_array() const {
 }
 inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
 NumRow::my_array() const {
-  // @@protoc_insertion_point(field_list:NumRow.my_array)
+  // @@protoc_insertion_point(field_list:proto.NumRow.my_array)
   return _internal_my_array();
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
@@ -677,7 +680,7 @@ NumRow::_internal_mutable_my_array() {
 }
 inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
 NumRow::mutable_my_array() {
-  // @@protoc_insertion_point(field_mutable_list:NumRow.my_array)
+  // @@protoc_insertion_point(field_mutable_list:proto.NumRow.my_array)
   return _internal_mutable_my_array();
 }
 
@@ -691,6 +694,7 @@ NumRow::mutable_my_array() {
 
 // @@protoc_insertion_point(namespace_scope)
 
+}  // namespace proto
 
 // @@protoc_insertion_point(global_scope)
 
