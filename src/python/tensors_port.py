@@ -18,3 +18,8 @@ for i in range(Z):
             my_sub_array.my_array.append(tensor[i,j,k])
 
 print(tensor_3d)
+
+with open("tensor.bin", "wb") as f:
+    f.write(tensor_3d.SerializeToString())
+
+
