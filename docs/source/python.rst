@@ -7,9 +7,23 @@ Writing and Reading 3-D Arrays using Protocol Buffers in Python
 Protocol Buffers (protobuf) is a language- and platform-neutral data serialization format developed by Google. 
 In this tutorial, we will show you how to use protobuf to write and read 3-D arrays in Python. We will also demonstrate how to convert the resulting protobuf objects into 3-D numpy arrays for further processing.
 
-Requirements
+
+Memory Savings
 .................
 
+.. figure:: ../img/303030.png
+  :width: 500
+  :alt: Alternative text
+  :target: https://github.com/andrewrgarcia/bifrost
+
+A 30x30x30 dense array stored as a protobuf object occupies only **31 kB** of memory. 
+In contrast, the same array saved as a coordinate matrix in "zyxa" format consumes approximately **320 kB** of memory, 
+which is over 10 times more than the protobuf object. This demonstrates the efficiency of protocol buffers in terms of memory usage.
+
+\*z,y,x for coordinates, a for entry value
+
+Requirements
+.................
 
 Before we begin, make sure that you have protobuf installed in your Python environment. You can install it via pip by running:
 
