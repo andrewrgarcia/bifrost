@@ -38,6 +38,21 @@ Next, open up your terminal or Git shell on your computer. In the terminal, navi
 Once you're in the desired directory, paste the code you copied from the GitHub website into your terminal and press enter.
 This will initiate the cloning process, and the Bifrost repository will be copied to your local machine for you to access and work with.
 
+After this, proceed by installing libprotobuf-dev, which is a package in Ubuntu that provides the development files for the 
+Google Protocol Buffers library. The package includes header files, static libraries, and other resources necessary for 
+developing software that uses Google Protocol Buffers:
+
+.. code-block:: console
+
+  sudo apt install libprotobuf-dev
+
+Python
+.......
+
+.. code-block:: console
+
+  pip install -r requirements.in 
+
 
 
 Functional Organization Structure

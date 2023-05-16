@@ -5,7 +5,7 @@
 
 int main() {
   // Declare a numeric tensor from `NumTensor` protobuf
-  proto::NumTensor tensor_3d;
+  tensors::NumTensor tensor_3d;
 
   // This is a 3-D tensor with random numbers between 0 - 99
   int tensor[3][3][3];
